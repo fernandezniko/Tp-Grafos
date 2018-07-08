@@ -3,9 +3,9 @@ package segundaParte;
 public class AppEstadisticas {
 
 	public static void main(String[] args) {
-		/*
+		
 		//GRAF0 AL 40% DE ADYACENCIA
-		GrafoNDNP grafo = new GrafoNDNP("Generados\\Por Adyacencia\\grafoAleatorioAl40.in") ;
+		/*GrafoNDNP grafo = new GrafoNDNP("Generados\\Por Adyacencia\\grafoAleatorioAl40.in") ;
 		//SECUENCIAL ALEATORIO
 		grafo.ejecutarCaso("Estadisticas\\Secuencial Aleatorio\\grafoAleatorioAl40.out", 1);
 		//WELSH-POWELL
@@ -21,7 +21,7 @@ public class AppEstadisticas {
 		grafo2.ejecutarCaso("Estadisticas\\Welsh-Powel\\grafoAleatorioAl60.out", 2);
 		//MATULA
 		grafo2.ejecutarCaso("Estadisticas\\Matula\\grafoAleatorioAl60.out", 3);
-		*/
+		
 		//GRAF0 AL 90% DE ADYACENCIA
 		GrafoNDNP grafo3 = new GrafoNDNP("Generados\\Por Adyacencia\\grafoAleatorioAl90.in") ;
 		//SECUENCIAL ALEATORIO
@@ -30,6 +30,18 @@ public class AppEstadisticas {
 		grafo3.ejecutarCaso("Estadisticas\\Welsh-Powel\\grafoAleatorioAl90.out", 2);
 		//MATULA
 		grafo3.ejecutarCaso("Estadisticas\\Matula\\grafoAleatorioAl90.out", 3);
+		*/
+		
+		GrafoNDNP c = new GrafoNDNP("Generados\\Coloreados\\grafo.in") ;
+		//c.colorear(1);
+		//c.grabarGrafoColoreado("Generados\\Coloreados\\coloreado.out", 1,c.getVectorNodos());
+		
+		//c.colorear(2);
+		//c.grabarGrafoColoreado("Generados\\Coloreados\\coloreado.out", 2,c.getVectorNodos());
+		
+		c.colorear(3);
+		c.grabarGrafoColoreado("Generados\\Coloreados\\coloreado3.out", 3,c.getVectorNodos());
+		
 		
 	}
 }

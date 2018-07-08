@@ -1,13 +1,12 @@
 Algoritmo: Welsh Powell
-Nro cromatico: 91
-CantColores  CantRepeticiones
-91            3
-92            24
-93            369
-94            1614
-95            3257
-96            2965
-97            1393
-98            342
-99            32
-100            1
+Nro cromatico: 92
+CantidadColores  CanttidadRepeticiones
+92                 29
+93                 267
+94                 1347
+95                 2989
+96                 3208
+97                 1662
+98                 433
+99                 62
+100                 3

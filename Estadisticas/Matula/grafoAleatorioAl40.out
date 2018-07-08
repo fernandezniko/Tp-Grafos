@@ -1,12 +1,12 @@
 Algoritmo: Matula
 Nro cromatico: 52
-CantColores  CantRepeticiones
-52            5
-53            87
-54            579
-55            2107
-56            3388
-57            2624
-58            1029
-59            165
-60            16
+CantidadColores  CanttidadRepeticiones
+52                 18
+53                 191
+54                 998
+55                 2426
+56                 3188
+57                 2198
+58                 817
+59                 148
+60                 16

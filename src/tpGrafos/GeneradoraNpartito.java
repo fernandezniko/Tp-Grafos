@@ -37,10 +37,10 @@ public class GeneradoraNpartito extends Generador {
 				aux = aristasContiguas;
 		}
 
-		double porcAdyacencia = (2 * (double) cantAristas * 100) / ((cantNodos * (cantNodos - 1)) / 2);
+		double porcAdyacencia = ( cantAristas * 100) / ((cantNodos * (cantNodos - 1)) / 2);
 		MaxMinCa();
 		GrafoNDNP grafo = new GrafoNDNP(matriz, cantNodos, cantidadDeAristas, gradoMax, gradoMin, porcAdyacencia);
-		String nombreArch = "grafo "+ n + " partito.in";
+		String nombreArch = "grafo"+ n + "Partito.in";
 		grafo.grabar("Generados\\N-Partito\\"+nombreArch); ;
 	}
 

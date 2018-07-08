@@ -1,12 +1,11 @@
 Algoritmo: Welsh Powell
 Nro cromatico: 48
-CantColores  CantRepeticiones
-48            1
-49            30
-50            445
-51            2070
-52            3916
-53            2688
-54            761
-55            84
-56            5
+CantidadColores  CanttidadRepeticiones
+48                 4
+49                 206
+50                 1614
+51                 3913
+52                 3250
+53                 928
+54                 80
+55                 5

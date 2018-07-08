@@ -1,22 +1,23 @@
 Algoritmo: Secuencial aleatorio
-Nro cromatico: 50
-CantColores  CantRepeticiones
-50            2
-51            44
-52            219
-53            712
-54            1040
-55            931
-56            583
-57            313
-58            351
-59            532
-60            929
-61            1307
-62            1314
-63            934
-64            502
-65            218
-66            54
-67            14
-68            1
+Nro cromatico: 49
+CantidadColores  CanttidadRepeticiones
+49                 1
+50                 6
+51                 52
+52                 276
+53                 768
+54                 1088
+55                 880
+56                 562
+57                 329
+58                 287
+59                 544
+60                 1000
+61                 1259
+62                 1321
+63                 915
+64                 481
+65                 176
+66                 42
+67                 11
+68                 2

@@ -1,16 +1,15 @@
 Algoritmo: Matula
-Nro cromatico: 105
-CantColores  CantRepeticiones
-105            6
-106            28
-107            141
-108            531
-109            1154
-110            1994
-111            2395
-112            1936
-113            1167
-114            480
-115            138
-116            25
-117            5
+Nro cromatico: 106
+CantidadColores  CanttidadRepeticiones
+106                 4
+107                 27
+108                 146
+109                 483
+110                 1218
+111                 2102
+112                 2376
+113                 2033
+114                 1047
+115                 435
+116                 105
+117                 24
