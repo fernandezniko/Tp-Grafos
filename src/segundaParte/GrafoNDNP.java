@@ -21,13 +21,20 @@ public class GrafoNDNP {
 	Nodo[] nodo;
 	int cantColores;
 	
-	public GrafoNDNP(MatrizSimetrica matriz, int cantNodos, int cantAristas, int gMin, int gMax, double adyacencia) {
+	public GrafoNDNP(MatrizSimetrica matriz, int cantNodos, int cantAristas, int gMax, int gMin, double adyacencia) {
 		this.matrizAdyacencia=matriz;
 		this.cantNodos=cantNodos;
 		this.cantAristas=cantAristas;
 		this.grMin = gMin;
 		this.grMax = gMax;
 		this.adyacencia = adyacencia;
+	}
+	
+	public GrafoNDNP(String path) {
+		
+		leerArchivo(path);
+		
+		
 	}
 	
 	public void leerArchivo(String path) {
@@ -52,10 +59,11 @@ public class GrafoNDNP {
 		         for(int i=0; i<cantAristas; i++)
 	        	 {
 	        		 datos = br.readLine().split(" ");         
-	        		 f= Integer.parseInt(datos[0]);
-	        		 c= Integer.parseInt(datos[1]);
+	        		 f= Integer.parseInt(datos[0])+1;
+	        		 c= Integer.parseInt(datos[1])+1;
 	        		 matrizAdyacencia.set(f, c, 1);
-	        		 
+	        		 //nodo[f].setGrado(nodo[f].getGrado()+1);
+	        		 //nodo[c].setGrado(nodo[c].getGrado()+1);
 	        		 nodo[f].grado++; //Incremento el grado, tras realizar la adyacencia
 	        		 nodo[c].grado++;
 	             }  
@@ -74,7 +82,30 @@ public class GrafoNDNP {
 			      }		
 		}
 	
-	public void colorearSecuencialAlternativo() {
+	public void grabar(String path) {
+		try {
+			FileWriter fw= new FileWriter(new File(path));
+			PrintWriter pw= new PrintWriter(fw);
+			
+			pw.println(cantNodos+" "+ cantAristas+ " "+ adyacencia + " "+ grMax+" "+ grMin);
+			for(int i=0;i< cantNodos;i++) {
+				for(int j=i+1;j<cantNodos;j++) {
+					if(matrizAdyacencia.get(i, j)!=0) {
+						pw.println(i+" "+j);
+					}
+				}
+			}
+			
+			
+			
+			pw.close();
+		}catch(IOException e) {
+			System.out.println("Error");
+			
+		}
+	}
+	
+	public void colorearSecuencialAleatorio() {
 		int i, color;
 		cantColores = 0;
 		for(i=1; i<=cantNodos; i++) {
@@ -89,14 +120,14 @@ public class GrafoNDNP {
 	
 	public void colorearPowell(){
 		ordenarGradoDescente(nodo,1,nodo.length-1);
-		colorearSecuencialAlternativo();
+		colorearSecuencialAleatorio();
 	}
 	
 
 	public void colorearMatula(){
 		
 		ordenarGradoAscendente(nodo,1,nodo.length-1);
-		colorearSecuencialAlternativo();
+		colorearSecuencialAleatorio();
 	}
 	
 	private boolean esAdyacente(Nodo nodo1, Nodo nodo2) {
@@ -136,29 +167,6 @@ public class GrafoNDNP {
 		}while (i<=d); 	            
 		if(izq<d) ordenarGradoAscendente(nodo,izq,d);	            
 		if(i<der) ordenarGradoAscendente(nodo,i,der);	        
-	}
-	
-	public void grabar() {
-		try {
-			FileWriter fw= new FileWriter(new File("grafo.in"));
-			PrintWriter pw= new PrintWriter(fw);
-			
-			pw.println(cantNodos+" "+ cantAristas+ " "+ adyacencia + " "+ grMax+" "+ grMin);
-			for(int i=0;i< cantNodos;i++) {
-				for(int j=i+1;j<cantNodos;j++) {
-					if(matrizAdyacencia.get(i, j)!=0) {
-						pw.println(i+" "+j);
-					}
-				}
-			}
-			
-			
-			
-			pw.close();
-		}catch(IOException e) {
-			System.out.println("Error");
-			
-		}
 	}
 	
 	private void ordenarGradoDescente (Nodo nodo[],int izq,int der)
@@ -214,7 +222,7 @@ public class GrafoNDNP {
 
 	public void colorear(int codAlgoritmo)
 	{
-		if(codAlgoritmo == 1) colorearSecuencialAlternativo(); 
+		if(codAlgoritmo == 1) colorearSecuencialAleatorio(); 
 		if(codAlgoritmo == 2) colorearPowell(); 		
 		if(codAlgoritmo == 3) colorearMatula(); 
 		
@@ -230,6 +238,30 @@ public class GrafoNDNP {
 		return g_mayor;
 	}
 	
+	
+	public void ejecutarCaso (String pathCaso, int cod_algoritmo)
+	{
+		int cantColor[] = new int[cantNodos];
+		int nroCromatico= cantNodos;
+		Nodo[] grafoColoreado=null;
+		
+		for(int i=0; i<10000; i++)
+		{
+			colorear(cod_algoritmo);
+			cantColor[cantColores]+=1 ;
+			if(cantColores < nroCromatico) //me quedo con la menor cantidad de colores obtenidos hasta el
+			{                             //momento.
+				nroCromatico= cantColores;
+				grafoColoreado = nodo;
+			}
+			alterarOrdenNodos();
+		}
+		
+		grabarResumenCaso(pathCaso,cod_algoritmo,cantColor, nroCromatico);
+		//grabarGrafoColoreado(pathCaso,cod_algoritmo, grafoColoreado,nroCromatico);
+	
+	}
+	
 	public void grabarResumenCaso(String path, int cod_algoritmo, int[]cantColor, int nroCromatico)
 	{
 		//String pathOUT = "Lote de prueba/"+cod_algoritmo + "_" + pathCaso + "_resumen.txt";
@@ -238,13 +270,25 @@ public class GrafoNDNP {
 		try {
 			fw = new FileWriter(path);
 			pw = new PrintWriter(fw);
-			pw.println("Algoritmo: " + cod_algoritmo);
-			pw.println("NRO CROMATICO: " + nroCromatico);
+			String algoritmo ;
+			if(cod_algoritmo == 1)
+				algoritmo = "Secuencial aleatorio" ;
+			else
+			{
+				if(cod_algoritmo == 2)
+					algoritmo = "Welsh Powell" ;
+				else
+					algoritmo = "Matula" ;
+			}
+			
+			pw.println("Algoritmo: " + algoritmo);
+			pw.println("Nro cromatico: " + nroCromatico);
 			pw.println("CantColores  CantRepeticiones");
+			
 			for(int i=0; i<cantColor.length; i++)
 			{
 				if(cantColor[i]>0)
-					pw.println(i + " " + cantColor[i]);
+					pw.println(i + "            " + cantColor[i]);
 			}	
 		} catch (IOException e) {
 			e.printStackTrace();

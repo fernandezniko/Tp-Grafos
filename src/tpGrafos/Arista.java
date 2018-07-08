@@ -17,7 +17,7 @@ public class Arista implements Comparable<Object> {
 	public Arista(int nodoOrigen, int nodoDestino) {
 		this.nodoOrigen = nodoOrigen;
 		this.nodoDestino = nodoDestino;
-		this.random = Math.random() * 10000;
+		this.random = Math.random() * 10;
 	}
 
 	public int compareTo(Object o) {

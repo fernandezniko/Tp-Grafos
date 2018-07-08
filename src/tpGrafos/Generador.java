@@ -65,9 +65,9 @@ public abstract class Generador {
 			}
 		}
 		
-		for(int i=0 ; i<cantNodos ; i++) {
-			System.out.print(vec[i]);
-		}
+		//for(int i=0 ; i<cantNodos ; i++) {
+		//	System.out.print(vec[i]);
+		//}
 		
 		int grMaxAnt , grMinAnt ,aristas=0;
 		grMaxAnt = vec[0] ;
@@ -93,5 +93,7 @@ public abstract class Generador {
 		System.out.println("Grado Maximo: " + this.gradoMax);
 		System.out.println("Grado Minimo: " + this.gradoMin);
 	}
+	
+	
 }
 

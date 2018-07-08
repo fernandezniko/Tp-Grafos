@@ -63,6 +63,11 @@ public class Nodo {
 	public void setGrado(int grado) {
 		this.grado = grado;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("%d %d %d", numero,color,grado);
+	}
 	
 }
 

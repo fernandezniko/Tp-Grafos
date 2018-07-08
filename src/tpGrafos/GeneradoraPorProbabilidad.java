@@ -36,7 +36,8 @@ public class GeneradoraPorProbabilidad extends Generador {
 		MaxMinCa();
 		double adyacenciaReal = Math.rint((cantAristas * 100) / cantTotAristas) ;
 		GrafoNDNP grafo = new GrafoNDNP(matriz,cantNodos,cantidadDeAristas,gradoMax,gradoMin,adyacenciaReal);
-		grafo.grabar();
+		String nombreArch = "grafoConProbabilidadDe"+ (int)(probaParaArista*100)+".in" ;
+		grafo.grabar("Generados\\Por Probabilidad\\"+nombreArch); ;
 	}
 	
 	

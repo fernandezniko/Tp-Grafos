@@ -4,22 +4,24 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		/*MatrizSimetrica m = new MatrizSimetrica(5) ;
+		Generador proba = new GeneradoraPorProbabilidad(10, 0.5) ;
+		proba.generar();
 		
-		m.setFc(1, 0, 1);
-		m.setFc(2, 0, 1);
-		m.setFc(3, 1, 1);
-		m.setFc(3, 2, 1);
-		m.setFc(4, 3, 1);
+		Generador nP = new GeneradoraNpartito(10, 2) ;
+		nP.generar();
 		
-		m.recorrerVector();
+		//Generador g1 = new GeneradorPorPorcentajeDeAdyacencia(600, 40.0) ;
+		//g1.generar();
 		
-		*/
-		Generador g1 = new GeneradoraPorProbabilidad(100, 0.5) ;
-		//Generador g1 = new GeneradorPorPorcentajeDeAdyacencia(5, 0.5) ;
-		
+		/*
+		Generador g1 = new GeneradorPorPorcentajeDeAdyacencia(600, 40.0) ;
 		g1.generar();
-		g1.recorrerG() ;
-		//g1.MaxMinCa();
+		
+		Generador g2 = new GeneradorPorPorcentajeDeAdyacencia(600, 60.0) ;
+		g2.generar();
+		
+		Generador g3 = new GeneradorPorPorcentajeDeAdyacencia(600, 90.0) ;
+		g3.generar();
+		*/
 	}
 }
