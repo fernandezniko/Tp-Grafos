@@ -1,18 +1,19 @@
 Algoritmo: Welsh Powell
-Nro cromatico: 189
-CantidadColores  CanttidadRepeticiones
-189                 7
-190                 14
-191                 84
-192                 271
-193                 701
-194                 1332
-195                 1911
-196                 2024
-197                 1750
-198                 1118
-199                 550
-200                 184
-201                 41
-202                 12
-203                 1
+Nro cromatico: 191 en iteracion 2949
+CantidadColores  CantidadRepeticiones 
+191              2
+192              2
+193              21
+194              63
+195              206
+196              584
+197              1109
+198              1600
+199              1905
+200              1811
+201              1373
+202              801
+203              343
+204              132
+205              37
+206              11

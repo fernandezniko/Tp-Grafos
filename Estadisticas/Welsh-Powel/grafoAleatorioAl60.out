@@ -1,12 +1,15 @@
 Algoritmo: Welsh Powell
-Nro cromatico: 92
-CantidadColores  CanttidadRepeticiones
-92                 29
-93                 267
-94                 1347
-95                 2989
-96                 3208
-97                 1662
-98                 433
-99                 62
-100                 3
+Nro cromatico: 95 en iteracion 2198
+CantidadColores  CantidadRepeticiones 
+95              2
+96              39
+97              338
+98              1109
+99              2478
+100              2821
+101              2082
+102              874
+103              226
+104              29
+105              1
+106              1

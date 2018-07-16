@@ -1,17 +1,15 @@
 Algoritmo: Secuencial aleatorio
-Nro cromatico: 99
-CantidadColores  CanttidadRepeticiones
-99                 1
-100                 1
-101                 20
-102                 131
-103                 570
-104                 1361
-105                 2222
-106                 2517
-107                 1826
-108                 942
-109                 310
-110                 84
-111                 13
-112                 2
+Nro cromatico: 98 en iteracion 2167
+CantidadColores  CantidadRepeticiones 
+98              4
+99              27
+100              176
+101              712
+102              1670
+103              2512
+104              2498
+105              1588
+106              602
+107              181
+108              26
+109              4

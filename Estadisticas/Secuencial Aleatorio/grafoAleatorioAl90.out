@@ -1,23 +1,22 @@
 Algoritmo: Secuencial aleatorio
-Nro cromatico: 200
-CantidadColores  CanttidadRepeticiones
-200                 6
-201                 14
-202                 45
-203                 121
-204                 258
-205                 521
-206                 794
-207                 1180
-208                 1386
-209                 1491
-210                 1445
-211                 1141
-212                 743
-213                 455
-214                 236
-215                 95
-216                 38
-217                 21
-218                 9
-219                 1
+Nro cromatico: 198 en iteracion 523
+CantidadColores  CantidadRepeticiones 
+198              5
+199              20
+200              50
+201              127
+202              269
+203              533
+204              920
+205              1232
+206              1481
+207              1508
+208              1379
+209              1084
+210              675
+211              412
+212              188
+213              74
+214              30
+215              10
+216              3

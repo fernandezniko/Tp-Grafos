@@ -11,7 +11,7 @@ public abstract class Generador {
 	protected int cantidadDeAristas ;
 	
 	public Generador(int n){
-		
+		System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
 		this.cantNodos = n ;
 		matriz = new MatrizSimetrica(n) ;
 	}

@@ -10,19 +10,18 @@ public class App {
 		Generador nP = new GeneradoraNpartito(10, 2) ;
 		nP.generar();
 		*/
-		Generador g1 = new GeneradorPorPorcentajeDeAdyacencia(10, 50.0) ;
+		
+		
+		
+		Generador g1 = new GeneradorPorPorcentajeDeAdyacencia(600, 0.4) ;
 		g1.generar();
 		
-		/*
-		Generador g1 = new GeneradorPorPorcentajeDeAdyacencia(600, 40.0) ;
-		g1.generar();
-		
-		Generador g2 = new GeneradorPorPorcentajeDeAdyacencia(600, 60.0) ;
+		Generador g2 = new GeneradorPorPorcentajeDeAdyacencia(600, 0.6) ;
 		g2.generar();
 		
-		Generador g3 = new GeneradorPorPorcentajeDeAdyacencia(600, 90.0) ;
+		Generador g3 = new GeneradorPorPorcentajeDeAdyacencia(600, 0.9) ;
 		g3.generar();
-		*/
+		
 		
 	}
 }

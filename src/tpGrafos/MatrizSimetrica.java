@@ -6,7 +6,13 @@ public class MatrizSimetrica {
 	private int orden ;
 	private int [] vec ;
 	
+	public int getValor(int i) {
+		return vec[i];
+	}
 	
+	public void setValor(int i, int val) {
+		vec[i] = val;
+	}
 	public int getTam() {
 		return this.tam;
 	}

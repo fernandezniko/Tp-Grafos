@@ -1,12 +1,13 @@
 Algoritmo: Matula
-Nro cromatico: 52
-CantidadColores  CanttidadRepeticiones
-52                 18
-53                 191
-54                 998
-55                 2426
-56                 3188
-57                 2198
-58                 817
-59                 148
-60                 16
+Nro cromatico: 65 en iteracion 7755
+CantidadColores  CantidadRepeticiones 
+65              1
+66              68
+67              579
+68              2187
+69              3497
+70              2633
+71              877
+72              151
+73              6
+74              1

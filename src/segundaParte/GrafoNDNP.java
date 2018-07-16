@@ -30,6 +30,8 @@ public class GrafoNDNP {
 		this.adyacencia = adyacencia;
 	}
 	
+	
+	
 	public GrafoNDNP(String path) {
 		
 		leerArchivo(path);
@@ -244,8 +246,9 @@ public class GrafoNDNP {
 	{
 		int cantColor[] = new int[cantNodos];
 		int nroCromatico= cantNodos;
-		Nodo[] grafoColoreado=null;
 		
+		//Nodo[] grafoColoreado=null;
+		int iteracion=0;
 		for(int i=0; i<10000; i++)
 		{
 			colorear(cod_algoritmo);
@@ -253,17 +256,18 @@ public class GrafoNDNP {
 			if(cantColores < nroCromatico) //me quedo con la menor cantidad de colores obtenidos hasta el
 			{                             //momento.
 				nroCromatico= cantColores;
-				grafoColoreado = nodo;
+				//grafoColoreado = nodo;
+				iteracion=i;
 			}
 			alterarOrdenNodos();
 		}
 		
-		grabarResumenCaso(pathCaso,cod_algoritmo,cantColor, nroCromatico);
+		grabarResumenCaso(pathCaso,cod_algoritmo,cantColor, nroCromatico,iteracion);
 		
 	
 	}
 	
-	public void grabarResumenCaso(String path, int cod_algoritmo, int[]cantColor, int nroCromatico)
+	public void grabarResumenCaso(String path, int cod_algoritmo, int[]cantColor, int nroCromatico,int iteracion)
 	{
 		FileWriter fw = null;
 		PrintWriter pw= null;
@@ -283,13 +287,14 @@ public class GrafoNDNP {
 			}
 			
 			pw.println("Algoritmo: " + algoritmo);
-			pw.println("Nro cromatico: " + nroCromatico);
-			pw.println("CantidadColores  CantidadRepeticiones");
+			pw.println("Nro cromatico: " + nroCromatico + " en iteracion " + iteracion);
+			
+			pw.println("CantidadColores  CantidadRepeticiones ");
 			
 			for(int i=0; i<cantColor.length; i++)
 			{
 				if(cantColor[i]>0)
-					pw.println(i + "              " + cantColor[i]);
+					pw.println(i + "              " + cantColor[i] );
 			}	
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -39,8 +39,9 @@ public class Probador {
 			linea = br.readLine();
 			datos = linea.split(" ");
 			cantNodosColoreo = Integer.parseInt(datos[0]);
-			cantAristasColoreo = Integer.parseInt(datos[1]);
-			cantColores = Integer.parseInt(br.readLine());
+			cantColores = Integer.parseInt(datos[1]);
+			cantAristasColoreo = Integer.parseInt(datos[2]);
+			
 			nodosColoreados = new int[cantNodosColoreo+1];
 			for(i=0; i<cantNodosColoreo; i++) {
 				linea = br.readLine();
@@ -71,7 +72,7 @@ public class Probador {
 		
 		cantNodos = nodosColoreados.length;
 		int color;
-		for(i=1; i<cantNodos; i++) {
+		for(i=0; i<cantNodos; i++) {
 			 color = nodosColoreados[i];
 			 for(j=i+1; j<cantNodos; j++)
 				 if(matrizAdyacencia[i][j]==1 && color==nodosColoreados[j])
@@ -82,7 +83,7 @@ public class Probador {
 	
 	public static void main(String[] args) {
 		
-		Probador prueba = new Probador("grafo.in","grafo.out");
+		Probador prueba = new Probador("Generados/coloreados/grafo.in","Generados/coloreados/grafo.out");
 		if(prueba.verifica()== false)
 			System.out.println("Grafo mal coloreado");
 		else
